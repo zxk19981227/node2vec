@@ -83,7 +83,7 @@ def learn_embeddings(walks):
 	'''
 	Learn embeddings by optimizing the Skipgram objective using SGD.
 	'''
-	walks = [map(str, walk) for walk in walks]
+	walks = [map(str, walk) for walk in walks]#这里仅仅是定义一下walks和模型，我觉得没有怎么调用
 	model = Word2Vec(walks, size=args.dimensions, window=args.window_size, min_count=0, sg=1, workers=args.workers, iter=args.iter)
 	model.save_word2vec_format(args.output)
 	
